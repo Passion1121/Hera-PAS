@@ -1,0 +1,3 @@
+#!/bin/sh
+export DEV_ROOT=`pwd`
+echo DEV_ROOT="${DEV_ROOT}"

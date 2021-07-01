@@ -45,11 +45,11 @@ typedef struct _ip_hdr
 {
 #ifdef __LITTLE_ENDIAN_BITFIELD
     unsigned char ihl:4;
-    unsigned char version:4
+    unsigned char version:4;
 #else
     unsigned char version:4;    //版本
 	unsigned char ihl:4;        //首部长度
-#elif
+#endif
     unsigned char tos;          //服务类型
     unsigned short tot_len;     //总长度
     unsigned short id:3;        //标志

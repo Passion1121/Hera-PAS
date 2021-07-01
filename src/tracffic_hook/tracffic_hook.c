@@ -13,7 +13,7 @@
 #include <signal.h>
 
 #include <pcap.h>
-#include "traffic_analysis.h"
+#include "tracffic_hook.h"
 
 pcap_t *g_pcap = NULL;
 
@@ -65,7 +65,7 @@ static void Packet_handle(u_char *user, const struct pcap_pkthdr *h, u_char *sp)
     // 刷新
     pcap_dump_flush(dumper);
 
-    return 0;
+    return ;
 }
 
 //主函数
@@ -74,7 +74,7 @@ int main(int argc, char *argv[]){
     int ret = -1;
     //参数校验，需要输入网口名和需要生成pcap数据包文件名字
     if(argc != 3){
-        fprintf(stderr, "Usage:\n\t./%s interface pcap_file_name \n", argv[0]);
+        fprintf(stderr, "Usage:\n\t%s interface pcap_file_name \n", argv[0]);
         exit(1);
     }
 
@@ -140,7 +140,7 @@ int main(int argc, char *argv[]){
     //刷新数据到数据包文件
     pcap_dump_flush(dumper);
 
-    printf("Stop capture the packet, total:[%d]\n""Program 3s will exit ...\n", packet_num);
+    printf("\nStop capture the packet, total:[%d]\n""Program 3s will exit ...\n", packet_num);
     sleep(3);
     ret = 0;
 
@@ -155,3 +155,4 @@ ERR:
     }
 
     return ret;
+}
