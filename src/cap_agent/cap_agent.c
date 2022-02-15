@@ -13,7 +13,7 @@
 #include <signal.h>
 
 #include <pcap.h>
-#include "tracffic_hook.h"
+#include "cap_agent.h"
 
 pcap_t *g_pcap = NULL;
 
