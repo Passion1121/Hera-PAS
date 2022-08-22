@@ -1,0 +1,3 @@
+clean:
+	@echo "do nothing"
+
